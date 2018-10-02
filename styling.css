@@ -1,12 +1,17 @@
-.body {
+body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ccc;
 }
 
 
 /*Link Styling - Start*/
+.linkWrapper {
+  height: 100%;
+  width: 100%
+}
 
 .links {
   color: #000;
@@ -17,6 +22,7 @@
   line-height: 40px;
   font-size: 35px;
   font-family: 'Oswald', sans-serif;
+  transition: letter-spacing 0.2s;
 }
 
 
@@ -24,18 +30,17 @@
   top: 0;
   letter-spacing: 5px;
   text-align: center;
-  margin-left: 50%;
-  transform: translateX(-60%);
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 30px;
   margin-top: 30px;
   background: rgb(255,139,148);
-background: linear-gradient(0deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+background: linear-gradient(0deg, rgba(255,139,148,0) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
 .leftLink {
-  top: 0;
-  margin-top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
   left: 0;
   text-align: center;
@@ -48,8 +53,7 @@ background: linear-gradient(-90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 }
 
 .rightLink {
-  top: 0;
-  margin-top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
   right: 0;
   text-align: center;
@@ -62,7 +66,7 @@ background: linear-gradient(90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 }
 
 .bottomLink {
-  margin-left: 50%;
+  left: 50%;
   transform: translateX(-50%);
   bottom: 0;
   letter-spacing: 5px;
@@ -88,14 +92,24 @@ background: linear-gradient(180deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 /*content Styling - Start*/
 
 .contentWrapper {
-  width: calc(100vw - 100px);
-  height: calc(100vh - 100px);
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
   background-color: #00746b;
   margin: 50px;
   position: absolute;
   top: 0;
   left: 0;
-}
+  background: linear-gradient(-45deg, #134aa3, #00746b);
+  background-size: 300% 300%;
+  animation: backgroundAnimation 25s ease infinite;
+  }
+
+  @keyframes backgroundAnimation {
+  0%{background-position:9% 0%}
+  50%{background-position:92% 100%}
+  100%{background-position:9% 0%}
+  }
+
 
 table {
   margin: 0 auto;
