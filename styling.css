@@ -24,17 +24,19 @@
   top: 0;
   letter-spacing: 5px;
   text-align: center;
-  margin-left: calc(50vw - 80px);
+  margin-left: 50%;
+  transform: translateX(-60%);
+  padding: 0 30px;
   margin-top: 30px;
-  width: 160px;
   background: rgb(255,139,148);
 background: linear-gradient(0deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
 .leftLink {
-  height: 380px;
-  margin-top: calc(50vh - 190px);
+  top: 0;
+  margin-top: 50vh;
+  transform: translateY(-50%);
   left: 0;
   text-align: center;
   margin-left: 30px;
@@ -46,8 +48,9 @@ background: linear-gradient(-90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 }
 
 .rightLink {
-  height: 320px;
-  margin-top: calc(50vh - 160px);
+  top: 0;
+  margin-top: 50vh;
+  transform: translateY(-50%);
   right: 0;
   text-align: center;
   writing-mode: vertical-rl;
@@ -59,9 +62,8 @@ background: linear-gradient(90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 }
 
 .bottomLink {
-  width: 230px;
-  margin-left: calc(50vw - 115px);
-  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   letter-spacing: 5px;
   margin-bottom: 30px;
@@ -73,6 +75,11 @@ background: linear-gradient(180deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
 .nonActive {
   color: #000;
   background: transparent;
+}
+
+.nonActive:hover {
+  letter-spacing: 20px;
+  transition: letter-spacing 0.2s;
 }
 /*Link Styling - End*/
 
