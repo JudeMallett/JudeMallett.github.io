@@ -1,0 +1,118 @@
+.body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Link Styling - Start*/
+
+.links {
+  color: #000;
+  text-decoration: none;
+  display: inline;
+  z-index: 5;
+  position: absolute;
+  line-height: 40px;
+  font-size: 35px;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.topLink {
+  top: 0;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-left: calc(50vw - 80px);
+  margin-top: 30px;
+  width: 160px;
+  background: rgb(255,139,148);
+background: linear-gradient(0deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+  color: #fff;
+}
+
+.leftLink {
+  height: 380px;
+  margin-top: calc(50vh - 190px);
+  left: 0;
+  text-align: center;
+  margin-left: 30px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  background: rgb(255,139,148);
+background: linear-gradient(-90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+  color: #fff;
+}
+
+.rightLink {
+  height: 320px;
+  margin-top: calc(50vh - 160px);
+  right: 0;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-right: 30px;
+  background: rgb(255,139,148);
+background: linear-gradient(90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+  color: #fff;
+}
+
+.bottomLink {
+  width: 230px;
+  margin-left: calc(50vw - 115px);
+  text-align: center;
+  bottom: 0;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  background: rgb(255,139,148);
+background: linear-gradient(180deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+  color: #fff;
+}
+
+.nonActive {
+  color: #000;
+  background: transparent;
+}
+/*Link Styling - End*/
+
+
+
+/*content Styling - Start*/
+
+.contentWrapper {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  background-color: #00746b;
+  margin: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+table {
+  margin: 0 auto;
+  height: 500px;
+  border-collapse: collapse;
+  margin-top: calc(50vh - 50px - 250px);
+}
+
+table td {
+  padding: 0 30px;
+}
+
+.titleWrapper {
+  border-right: solid black 2px;
+}
+
+
+table h1 {
+  font-size: 60px;
+  font-family: 'Oswald' , sans-serif;
+}
+
+table p {
+  font-size: 25px;
+  font-family: 'Nunito' , sans-serif;
+}
+/*Content Styling - End*/
