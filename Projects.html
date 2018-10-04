@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Projects</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald:700" rel="stylesheet">
+  <link rel="stylesheet" href="projects.css">
+  <link href="libraries/JM.ico" rel="icon" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="libraries/realshadow.min.js"></script>
+  <script src="libraries/particles.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+
+  <script src="js.js"></script>
+
+
+</head>
+
+<body id="particles-js">
+  <section class="projectWrapper">
+    <div class="imageWrapper" id="imageWrapper1">
+      <img class="image" id="image1" src="assets/projects/silverWaves.jpg">
+    </div>
+    <div class="descWrapper">
+      <div class="desc">
+        <h1>Silver Waves</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="projectWrapper">
+    <div class="imageWrapper" id="imageWrapper2">
+      <img class="image" id="image2" src="assets/projects/silverWaves.jpg">
+    </div>
+    <div class="descWrapper">
+      <div class="desc">
+        <h1>Silver Waves</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="projectWrapper">
+    <div class="imageWrapper">
+      <img class="image" src="assets/projects/silverWaves.jpg">
+    </div>
+    <div class="descWrapper">
+      <div class="desc">
+        <h1>Silver Waves</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="projectWrapper">
+    <div class="imageWrapper">
+      <img class="image" src="assets/projects/silverWaves.jpg">
+    </div>
+    <div class="descWrapper">
+      <div class="desc">
+        <h1>Silver Waves</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+  </section>
+
+  <script>
+    particlesJS.load('particle-js',
+    'particles.json', function(){
+      console.log('particles.json loaded...');
+    });
+  </script>
+
+  <script>
+
+    function resize()
+    {
+      $('.projectWrapper').css('height' , $('.image').css('height'));
+    }
+
+    resize();
+    $(window).resize(resize);
+
+
+    var $body = $('body');
+
+    function tilt(img, panel)
+    {
+      var $img = img,
+          $panel= panel;
+          sxPos = 0;
+          syPos = 0;
+
+      TweenMax.set([$img], { transformStyle: "preserve-3d"});
+
+      $body.mousemove(function(e)
+      {
+
+        sxPos = e.pageX - $img.offset().left - $img.width() / 2;
+        syPos = e.pageY - $img.offset().top - $img.height() / 2;
+        TweenMax.to($img, 2, {
+          rotationY: 0.03 * sxPos,
+          rotationX: -0.03 * syPos,
+          transformPerspective: 600,
+          transformOrigin: "center center",
+          ease: Expo.easeOut
+        });
+      });
+    }
+
+    var arr = $( ".projectWrapper" ).toArray()
+    console.log(arr);
+    for(var i=0; i < arr.length; i++) {
+      var $index = (i + 1).toString();
+      tilt($('.projectWrapper:nth-of-type(' + $index +') .image'), $('.projectWrapper:nth-of-type(' + $index +') .imageWrapper'));
+    }
+
+    console.log($('#image1').offset().left);
+
+    $('.image').realshadow({
+      followMouse: false,
+	    pageX: $('#image1').offset().left + $('#image1').width() /2,
+	    pageY: $('#image1').offset().top
+    });
+  </script>
+</body>
+</html>

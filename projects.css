@@ -1,0 +1,56 @@
+
+body {
+  background-color: #3f3f3f;
+}
+
+.projectWrapper {
+  width: 100%;
+  padding: 0;
+  padding-top: 200px;
+}
+
+.projectWrapper:nth-of-type(1) {
+  padding-top: 100px;
+}
+
+.imageWrapper, .descWrapper{
+  width: 50%;
+  height: 100%;
+}
+
+.projectWrapper:nth-of-type(odd) .imageWrapper,
+.projectWrapper:nth-of-type(odd) .descWrapper .desc
+ {
+  float: left;
+}
+
+.projectWrapper:nth-of-type(odd) .descWrapper,
+.projectWrapper:nth-of-type(odd) .imageWrapper .image
+ {
+  float: right;
+}
+
+.projectWrapper:nth-of-type(even) .imageWrapper,
+.projectWrapper:nth-of-type(even) .descWrapper .desc
+ {
+  float: right;
+}
+
+.projectWrapper:nth-of-type(even) .descWrapper,
+.projectWrapper:nth-of-type(even) .imageWrapper .image
+ {
+  float: left;
+}
+
+.image, .desc {
+  margin: 0 50px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.desc {
+  background-color: rgba(200,200,200,0.8);
+}
+
+.image {
+}
