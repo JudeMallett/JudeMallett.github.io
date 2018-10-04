@@ -13,7 +13,8 @@
   <link href="libraries/JM.ico" rel="icon" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="libraries/realshadow.min.js"></script>
+
+  <script src="libraries/particles.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
 
   <script src="js.js"></script>
@@ -25,54 +26,54 @@
   <div id="particles-js"></div>
   <section class="projectWrapper">
     <div class="imageWrapper" id="imageWrapper1">
-      <img class="image" id="image1" src="assets/projects/silverWaves.jpg">
+      <a href="https://judemallett.github.io/silverWaves/" target="_blank"><img class="image" id="image1" src="assets/projects/silverWaves.jpg">
     </div>
     <div class="descWrapper">
       <div class="desc">
-        <h1>Silver Waves</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    </div>
-  </section>
-
-  <section class="projectWrapper">
-    <div class="imageWrapper" id="imageWrapper2">
-      <img class="image" id="image2" src="assets/projects/silverWaves.jpg">
-    </div>
-    <div class="descWrapper">
-      <div class="desc">
-        <h1>Silver Waves</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1>Silver Waves</h1></a>
+        <p>This is a mock website project music artist, Silver Waves.<br><br>This was submitted as course work in a Web development module and was graded at an A.</p>
     </div>
     </div>
   </section>
 
   <section class="projectWrapper">
     <div class="imageWrapper">
-      <img class="image" src="assets/projects/silverWaves.jpg">
+      <a href="https://judemallett.github.io/canvasGame/" target="_blank"><img class="image" src="assets/projects/canvasGame.jpg">
     </div>
     <div class="descWrapper">
       <div class="desc">
-        <h1>Silver Waves</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1>Canvas Game</h1></a>
+        <p>The brief for this project was to create a piece of interactive media in Canvas and Javascript.<br><br>I created this platform game which features draggable objects, collision detection and gravity without the use of libraries.</p>
     </div>
     </div>
   </section>
 
   <section class="projectWrapper">
     <div class="imageWrapper">
-      <img class="image" src="assets/projects/silverWaves.jpg">
+      <a href="#" target="_blank"><img class="image" src="assets/projects/chrisMallett.jpg">
     </div>
     <div class="descWrapper">
       <div class="desc">
-        <h1>Silver Waves</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1>Chris Mallett</h1></a>
+        <p>This project is an online portfolio for Chris Mallett, a freelance editor for TV based in Bristol.<br><br>This project is still in development and isn't currently live.</p>
+      </div>
     </div>
+  </section>
+
+  <section class="projectWrapper">
+    <div class="imageWrapper">
+      <a href="#" target="_blank"><img class="image" src="assets/projects/psiCalc.jpg">
+    </div>
+    <div class="descWrapper">
+      <div class="desc">
+        <h1>PSI Calculator</h1></a>
+        <p>This project is a small javascript calculator to give the optimal tyre pressure for a 700c road bike.<br><br> The User inputs the load on each wheel and the width and is given the optimal pressure.</p>
+      </div>
     </div>
   </section>
 
 
-  <script src="particles.min.js"></script>
+
   <script>
     particlesJS.load('particles-js',
     'particles.json', function(){
@@ -95,10 +96,9 @@
 
     var $body = $('body');
 
-    function tilt(img, panel)
+    function tilt(img)
     {
       var $img = img,
-          $panel= panel;
           sxPos = 0;
           syPos = 0;
 
@@ -119,20 +119,13 @@
       });
     }
 
-    var arr = $( ".projectWrapper" ).toArray()
-    console.log(arr);
+    var arr = $( ".projectWrapper" ).toArray();
+
     for(var i=0; i < arr.length; i++) {
       var $index = (i + 1).toString();
-      tilt($('.projectWrapper:nth-of-type(' + $index +') .image'), $('.projectWrapper:nth-of-type(' + $index +') .imageWrapper'));
+      tilt($('.projectWrapper:nth-of-type(' + $index +') .image'));
     }
 
-    console.log($('#image1').offset().left);
-
-    $('.image').realshadow({
-      followMouse: false,
-	    pageX: $('#image1').offset().left + $('#image1').width() /2,
-	    pageY: $('#image1').offset().top
-    });
   </script>
 </body>
 </html>
