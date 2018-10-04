@@ -148,3 +148,94 @@ table p {
   font-family: 'Nunito' , sans-serif;
 }
 /*Content Styling - End*/
+
+
+
+
+/*Projects Styling*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.projectWrapper {
+  width: 100%;
+  height: 281.25px;
+  padding: 0;
+  padding-top: 200px;
+}
+
+.projectWrapper:nth-of-type(1) {
+  padding-top: 100px;
+}
+
+.imageWrapper, .descWrapper{
+  width: 50%;
+  height: 100%;
+}
+
+.projectWrapper:nth-of-type(odd) .imageWrapper,
+.projectWrapper:nth-of-type(odd) .descWrapper .desc
+ {
+  float: left;
+}
+
+.projectWrapper:nth-of-type(odd) .descWrapper,
+.projectWrapper:nth-of-type(odd) .imageWrapper .image
+ {
+  float: right;
+}
+
+.projectWrapper:nth-of-type(even) .imageWrapper,
+.projectWrapper:nth-of-type(even) .descWrapper .desc
+ {
+  float: right;
+}
+
+.projectWrapper:nth-of-type(even) .descWrapper,
+.projectWrapper:nth-of-type(even) .imageWrapper .image
+ {
+  float: left;
+}
+
+.image, .desc {
+  margin: 0 50px;
+  width: 80%;
+  max-width: 500px;
+  z-index: 2;
+  position:relative;
+}
+
+.desc {
+  background-color: rgba(200,200,200,0.8);
+  padding: 0 10px;
+}
+
+#particles-js {
+  background: radial-gradient(circle, rgba(1,124,126,1) 10%, rgba(14,96,130,1) 100%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+.desc h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.desc p {
+  font-family: 'Nunito' , sans-serif;
+}
+.desc h1:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px #000;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin:100% 50%
+}
+.desc h1:hover:after {
+  transform: scaleX(1);
+  transform-origin:0 50%;
+}

@@ -1,7 +1,6 @@
 
-$(document).ready(function()
+function indexPage()
 {
-
   $('.contentWrapper').realshadow({
     type: 'drop'
   });
@@ -9,4 +8,64 @@ $(document).ready(function()
     type: 'drop',
     inverse: true
   });
-});
+
+  resize();
+  $(window).resize(resize);
+}
+
+
+function projectsPage()
+{
+  resize();
+
+  particlesJS.load('particles-js',
+  'particles.json', function(){
+    console.log('particles.json loaded...');
+  });
+
+
+
+
+  var $body = $('body');
+
+  function tilt(img)
+  {
+    var $img = img,
+        sxPos = 0;
+        syPos = 0;
+
+    TweenMax.set([$img], { transformStyle: "preserve-3d"});
+
+    $body.mousemove(function(e)
+    {
+
+      sxPos = e.pageX - $img.offset().left - $img.width() / 2;
+      syPos = e.pageY - $img.offset().top - $img.height() / 2;
+      TweenMax.to($img, 2, {
+        rotationY: 0.02 * sxPos,
+        rotationX: -0.02 * syPos,
+        transformPerspective: 600,
+        transformOrigin: "center center",
+        ease: Expo.easeOut
+      });
+    });
+  }
+
+  var arr = $( ".projectWrapper" ).toArray();
+
+  for(var i=0; i < arr.length; i++) {
+    var $index = (i + 1).toString();
+    tilt($('.projectWrapper:nth-of-type(' + $index +') .image'));
+  }
+
+
+  $(window).resize(resize);
+}
+
+function resize()
+{
+
+  $('.projectWrapper').css('height' , $('.image').css('height'));
+
+  $('#particles-js').css('height' , $(document).height() + "px");
+}

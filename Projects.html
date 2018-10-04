@@ -1,28 +1,28 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8">
-
   <title>Projects</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
   <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald:700" rel="stylesheet">
-  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="styling.css">
   <link href="libraries/JM.ico" rel="icon" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <script src="libraries/realshadow.min.js"></script>
+  <script src="libraries/barba.min.js"></script>
   <script src="libraries/particles.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
 
-  <script src="js.js"></script>
 
-
+  <script src="js.js">projectsPage();</script>
 </head>
 
 <body>
+<div id="barba-wrapper">
+<div class="barba-container">
+
   <div id="particles-js"></div>
   <section class="projectWrapper">
     <div class="imageWrapper" id="imageWrapper1">
@@ -31,7 +31,7 @@
     <div class="descWrapper">
       <div class="desc">
         <h1>Silver Waves</h1></a>
-        <p>This is a mock website project music artist, Silver Waves.<br><br>This was submitted as course work in a Web development module and was graded at an A.</p>
+        <p>This is a mock website project for music artist, Silver Waves.<br><br>This was submitted as course work in a Web development module and was graded at an A.</p>
     </div>
     </div>
   </section>
@@ -72,60 +72,11 @@
     </div>
   </section>
 
+</div>
+</div>
 
-
-  <script>
-    particlesJS.load('particles-js',
-    'particles.json', function(){
-      console.log('particles.json loaded...');
-    });
-  </script>
-
-  <script>
-
-    function resize()
-    {
-      $('.projectWrapper').css('height' , $('.image').css('height'));
-
-      $('#particles-js').css('height' , $(document).height() + "px");
-    }
-
-    resize();
-    $(window).resize(resize);
-
-
-    var $body = $('body');
-
-    function tilt(img)
-    {
-      var $img = img,
-          sxPos = 0;
-          syPos = 0;
-
-      TweenMax.set([$img], { transformStyle: "preserve-3d"});
-
-      $body.mousemove(function(e)
-      {
-
-        sxPos = e.pageX - $img.offset().left - $img.width() / 2;
-        syPos = e.pageY - $img.offset().top - $img.height() / 2;
-        TweenMax.to($img, 2, {
-          rotationY: 0.02 * sxPos,
-          rotationX: -0.02 * syPos,
-          transformPerspective: 600,
-          transformOrigin: "center center",
-          ease: Expo.easeOut
-        });
-      });
-    }
-
-    var arr = $( ".projectWrapper" ).toArray();
-
-    for(var i=0; i < arr.length; i++) {
-      var $index = (i + 1).toString();
-      tilt($('.projectWrapper:nth-of-type(' + $index +') .image'));
-    }
-
-  </script>
 </body>
+
+<script>projectsPage();</script>
+
 </html>

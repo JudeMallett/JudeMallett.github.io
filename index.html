@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+
+
   <meta charset="utf-8">
 
   <title>Jude Mallett</title>
@@ -14,13 +16,24 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="libraries/realshadow.min.js"></script>
+  <script src="libraries/barba.min.js"></script>
+  <script src="libraries/particles.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+
 
   <script src="js.js"></script>
 
 
+
 </head>
 
+
+
 <body>
+
+<div id="barba-wrapper">
+<div class="barba-container">
+
   <div class="linkWrapper">
 
     <a href="#" class="links topLink">HOME</a>
@@ -41,5 +54,118 @@
     </table>
   </section>
 
+</div>
+</div>
+
 </body>
+
+<script>
+
+$('document').ready(function()
+{
+  indexPage();
+  Barba.Prefetch.init();
+  Barba.Pjax.start();
+
+  /*var transEffect = Barba.BaseTransition.extend({
+    start: function()
+    {
+      this.newContainerLoading.then(val => this.fadeInNewContent($(this.newContainer)));
+    },
+    fadeInNewContent: function(nc)
+    {
+      nc.hide();
+      var _this =  this;
+      $(this.oldContainer).fadeOut(1000).promise().done(() => {
+        //projectsPage();
+
+        nc.css('visibility','visible');
+        console.log($('.image').css('height'));
+        nc.fadeIn(1000, function(){
+          _this.done();
+        })
+      });
+    }
+  });
+
+  Barba.Pjax.getTransition = function() {
+    return transEffect;
+
+  }*/
+
+
+  Barba.Dispatcher.on('linkClicked', function(el) {
+     lastElementClicked = el;
+   });
+
+  var MovePage = Barba.BaseTransition.extend({
+    start: function() {
+
+      this.originalThumb = lastElementClicked;
+
+      Promise
+        .all([this.newContainerLoading, this.scrollTop()])
+        .then(this.movePages.bind(this));
+    },
+
+    scrollTop: function() {
+      var deferred = Barba.Utils.deferred();
+      var obj = { y: window.pageYOffset };
+
+      TweenLite.to(obj, 0.4, {
+        y: 0,
+        onUpdate: function() {
+          if (obj.y === 0) {
+            deferred.resolve();
+          }
+
+          window.scroll(0, obj.y);
+        },
+        onComplete: function() {
+          deferred.resolve();
+        }
+      });
+
+      return deferred.promise;
+    },
+
+    movePages: function() {
+      var _this = this;
+      var goingForward = true;
+
+      if (this.getNewPageFile() === this.oldContainer.dataset.prev) {
+        goingForward = false;
+        indexPage();
+      } else {
+        projectsPage();
+      }
+
+      TweenLite.set(this.newContainer, {
+        visibility: 'visible',
+        yPercent: goingForward ? -100 : 100,
+        position: 'fixed',
+        left: 0,
+        top: 0,
+        right: 0
+      });
+
+      TweenLite.to(this.oldContainer, 0.6, { yPercent: goingForward ? 100 : -100 });
+      TweenLite.to(this.newContainer, 0.6, { yPercent: 0, onComplete: function() {
+        TweenLite.set(_this.newContainer, { clearProps: 'all' });
+
+
+        _this.done();
+      }});
+    },
+    getNewPageFile: function() {
+      return Barba.HistoryManager.currentStatus().url.split('/').pop();
+    }
+  });
+
+  Barba.Pjax.getTransition = function() {
+    return MovePage;
+  };
+});
+</script>
+
 </html>
