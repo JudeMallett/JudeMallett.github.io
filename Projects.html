@@ -21,7 +21,8 @@
 
 </head>
 
-<body id="particles-js">
+<body>
+  <div id="particles-js"></div>
   <section class="projectWrapper">
     <div class="imageWrapper" id="imageWrapper1">
       <img class="image" id="image1" src="assets/projects/silverWaves.jpg">
@@ -71,9 +72,9 @@
   </section>
 
 
-  <script src="libraries/particles.min.js"></script>
+  <script src="particles.min.js"></script>
   <script>
-    particlesJS.load('particle-js',
+    particlesJS.load('particles-js',
     'particles.json', function(){
       console.log('particles.json loaded...');
     });
@@ -84,6 +85,8 @@
     function resize()
     {
       $('.projectWrapper').css('height' , $('.image').css('height'));
+
+      $('#particles-js').css('height' , $(document).height() + "px");
     }
 
     resize();
@@ -107,8 +110,8 @@
         sxPos = e.pageX - $img.offset().left - $img.width() / 2;
         syPos = e.pageY - $img.offset().top - $img.height() / 2;
         TweenMax.to($img, 2, {
-          rotationY: 0.03 * sxPos,
-          rotationX: -0.03 * syPos,
+          rotationY: 0.02 * sxPos,
+          rotationX: -0.02 * syPos,
           transformPerspective: 600,
           transformOrigin: "center center",
           ease: Expo.easeOut

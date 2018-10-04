@@ -1,7 +1,20 @@
 {
   "particles": {
     "number": {
-      "value": 50
+      "value": 50,
+      "density": {
+        "value_area" :800
+      }
+    },
+    "shape":{
+      "type": ""
+    }
+  },
+  "interactivity" :{
+    "events":{
+      "onclick": {
+        "enable": false
+      }
     }
   }
 }
