@@ -1,13 +1,13 @@
 
 function indexPage()
 {
-  $('.contentWrapper').realshadow({
+  /*$('.contentWrapper').realshadow({
     type: 'drop'
   });
   $('.links').realshadow({
     type: 'drop',
     inverse: true
-  });
+  });*/
 
   resize();
   $(window).resize(resize);
