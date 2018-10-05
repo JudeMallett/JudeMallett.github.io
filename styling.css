@@ -100,7 +100,7 @@ background: linear-gradient(180deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
   left: 0;
   background: linear-gradient(-45deg, rgba(19, 74, 163,.8), rgba(0, 116, 107,.8));
   background-size: 300% 300%;
-  animation: backgroundAnimation 25s ease infinite;
+  animation: backgroundAnimation 50s ease infinite;
   }
 
   .pattern {
