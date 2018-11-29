@@ -16,7 +16,6 @@ function indexPage()
 
 function projectsPage()
 {
-  resize();
 
   particlesJS.load('particles-js',
   'particles.json', function(){
@@ -58,14 +57,19 @@ function projectsPage()
     tilt($('.projectWrapper:nth-of-type(' + $index +') .image'));
   }
 
-
+  $(document).ready(resize);
   $(window).resize(resize);
 }
 
 function resize()
 {
-
   $('.projectWrapper').css('height' , $('.image').css('height'));
 
-  $('#particles-js').css('height' , $(document).height() + "px");
+  var margin;
+  for (var i=0; i < 4; i++)
+  {
+    margin = ($('.projectWrapper:nth-of-type(' + i + 1 + ')').height() - $('.desc:nth-of-type(' + i + 1 + ')').height()) / 2;
+
+    $('.desc:nth-of-type(' + i + 1 + ')').css('margin-top' , margin + "px");
+  }
 }

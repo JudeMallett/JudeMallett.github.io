@@ -1,3 +1,7 @@
+html {
+  height: 100%; 
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -34,8 +38,7 @@ body {
   transform: translateX(-50%);
   padding: 0 30px;
   margin-top: 30px;
-  background: rgb(255,139,148);
-background: linear-gradient(0deg, rgba(255,139,148,0) 50%, rgba(0,0,0,1) 50%);
+background: linear-gradient(0deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
@@ -47,8 +50,7 @@ background: linear-gradient(0deg, rgba(255,139,148,0) 50%, rgba(0,0,0,1) 50%);
   margin-left: 30px;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  background: rgb(255,139,148);
-background: linear-gradient(-90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+background: linear-gradient(-90deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
@@ -60,8 +62,7 @@ background: linear-gradient(-90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
   writing-mode: vertical-rl;
   text-orientation: upright;
   margin-right: 30px;
-  background: rgb(255,139,148);
-background: linear-gradient(90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+background: linear-gradient(90deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
@@ -71,8 +72,7 @@ background: linear-gradient(90deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
   bottom: 0;
   letter-spacing: 5px;
   margin-bottom: 30px;
-  background: rgb(255,139,148);
-background: linear-gradient(180deg, rgba(255,139,148,1) 50%, rgba(0,0,0,1) 50%);
+background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 50%);
   color: #fff;
 }
 
@@ -147,6 +147,17 @@ table p {
   font-size: 25px;
   font-family: 'Nunito' , sans-serif;
 }
+
+.aboutTable {
+  margin: 0 auto;
+  width: 60%;
+  height: auto;
+}
+
+.aboutTitleWrapper h1{
+  text-align: center;
+  border-bottom: solid black 2px;
+}
 /*Content Styling - End*/
 
 
@@ -167,6 +178,10 @@ a {
 
 .projectWrapper:nth-of-type(1) {
   padding-top: 100px;
+}
+
+.projectWrapper:last-of-type {
+  padding-bottom: 100px;
 }
 
 .imageWrapper, .descWrapper{
@@ -238,4 +253,33 @@ a {
 .desc h1:hover:after {
   transform: scaleX(1);
   transform-origin:0 50%;
+}
+
+.projectsNav a{
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  color: #fff;
+  background: rgb(26, 26, 26);
+  text-align: center;
+  width: 200px;
+  margin-left: calc(50% - 100px);
+  height: 50px;
+  vertical-align: middle;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  line-height: 40px;
+  font-size: 35px;
+  box-shadow: rgba(0,0,0,.2) 0px 0px 20px;
+  font-family: 'Oswald', sans-serif;
+  transition: all 0.2s;
+}
+
+.projectsNav a:hover {
+  height: 60px;
+  line-height: 50px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.2s;
+  box-shadow: rgba(0,0,0,.4) 0px 0px 20px;
 }
