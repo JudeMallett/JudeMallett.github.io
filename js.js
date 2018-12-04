@@ -65,6 +65,8 @@ function resize()
 {
   $('.projectWrapper').css('height' , $('.image').css('height'));
 
+  $('#particles-js').css('height' , $(document).height() + "px");
+  
   var margin;
   for (var i=0; i < 4; i++)
   {
