@@ -227,13 +227,13 @@ a {
 }
 
 #particles-js {
+  position: absolute;
   background: radial-gradient(circle, rgba(1,124,126,1) 10%, rgba(14,96,130,1) 100%);
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  position: absolute;
 }
 
 .desc h1 {
